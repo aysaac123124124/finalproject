@@ -1,12 +1,43 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-int a,d,materia,valor;
+int a,d,materia,valor,k,jugador[2],r;
 int materias(int valor);
+int opciones(int materia);
+int turno(int k);
+int imprimir_jug(int r);
 main()
-{
+{///////////////////////////incio main
+    
+      r=turno(k);
+      imprimir_jug(r);
     materia=materias(valor);
-switch(materia){
+opciones(materia);
+
+
+}//////////////////////////////////////////////termino main
+
+    
+
+//printf("pregunta \n 1)opcion\n2)opcion\n3)opcion\n4)opcion");/////////////////sistema de respuestas(ya meneja puntos)
+//////////// scanf("%d",&a);        ////////////////////////
+//////////////////if(a==1){if(r==1){g++;};if(r==2){c++;};}else 
+int materias(int valor){
+    valor=rand()%6+1;
+    if(valor==1)
+    return 1;
+    else if(valor==2)
+    return 2;
+    else if(valor==3)
+    return 3;
+    else if(valor==4)
+    return 4;
+    else if(valor==5)
+    return 5;
+    else if(valor==6)
+    return 6;
+}
+int opciones(int materia){switch(materia){
     
     case 1:
     printf("Ciencia");
@@ -25,26 +56,11 @@ switch(materia){
     break;
     case 6:
     printf("Deportes");
-    break;
-}
-
+    break;}}
     
-}
-// printf("pregunta \n 1)opcion\n2)opcion\n3)opcion\n4)opcion");
-//////////// scanf("%d",&d);        ////////////////////////
-//////////////////if(a==1){if(j==1){g++;};if(j==2){c++;};} 
-int materias(int valor){
-    valor=rand()%6+1;
-    if(valor==1)
-    return 1;
-    else if(valor==2)
-    return 2;
-    else if(valor==3)
-    return 3;
-    else if(valor==4)
-    return 4;
-    else if(valor==5)
-    return 5;
-    else if(valor==6)
-    return 6;
-}
+    int turno(int k){
+        if(k%2==0)
+        return 1;else
+        return 2;
+    }
+    int imprimir_jug(int r){printf("Es el turno de el jugador %d \n",r);}
